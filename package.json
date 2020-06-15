@@ -1,0 +1,21 @@
+{
+  "name": "honegumi",
+  "version": "0.1.0",
+  "description": "Yet Another Skeleton Fork",
+  "scripts": {
+    "serve": "serve ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alex-r-bigelow/honegumi.git"
+  },
+  "author": "Alex Bigelow",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alex-r-bigelow/honegumi/issues"
+  },
+  "homepage": "https://github.com/alex-r-bigelow/honegumi#readme",
+  "devDependencies": {
+    "serve": "^11.3.2"
+  }
+}
