@@ -1,34 +1,75 @@
 /* ---- Themes ---- */
 /* using data-theme attributes to allow switching via javascript */
-html[data-theme="dark"] {
-	/* dark theme: light background, dark text, blue accent */
-	--theme-hue: 0;					/* black */
+[data-theme="light"] {
+  /* default theme: light background, dark text, blue accent */
+	--theme-hue: 0;					/* white */
 	--accent-hue: 194;			/* blue */
 
-	--text-color-richer: hsl(var(--theme-hue), 0%, 95%);		/* 		*/
-	--text-color-normal: hsl(var(--theme-hue), 0%, 80%);		/* text color; button:hover:focus color */
-	--text-color-softer: hsl(var(--theme-hue), 0%, 67%);		/* button color; button:hover border */
+	--text-color-richer: hsl(var(--theme-hue), 0%, 5%);			/* #0d0d0d		*/
 
-	--accent-color: hsl(var(--accent-hue), 76%, 49%);				/* link; button-primary bg+border; textarea,select:focus border */
-	--accent-color-hover: hsl(var(--accent-hue), 86%, 57%);	/* link hover; button-primary:hover:focus bg+border */
+	--text-color-normal: hsl(var(--theme-hue), 0%, 13%);		/* #222222 		text color; button:hover:active color */
+	--text-color-softer: hsl(var(--theme-hue), 0%, 33%);		/* #555555 		button color; button:hover border */
 
-	--border-color: hsl(var(--theme-hue), 0%, 27%);					/* button border */
-	--border-color-softer: hsl(var(--theme-hue), 0%, 20%);	/* textarea,select,code,td,hr border	 */
+  --accent-color: hsl(var(--accent-hue), 86%, 57%);				/* #33C3F0 		link; button-primary bg+border; textarea,select:focus border */
+  --accent-color-hover: hsl(var(--accent-hue), 76%, 49%);	/* #1EAEDB 		link hover; button-primary:hover:active bg+border */
+  --accent-color-disabled: hsl(var(--accent-hue), 90%, 80%);
 
-	--background-color: hsl(var(--theme-hue), 0%, 12%);			/* body background; textarea,select background */
-	--background-color-softer: hsl(var(--theme-hue), 0%, 18%);
-	--code-background: hsl(var(--theme-hue), 0%, 5%);				/* code background*/
+	--button-color: var(--text-color-softer);								/* button color */
+	--button-color-hover: var(--text-color-normal);					/* button:hover:focus color */
+
+	--button-background: transparent;												/* button, input[type="submit" | "reset" | "button"] */
+	--button-background-hover: transparent;									/* button:hover, input[type="submit" | "reset" | "button"]:hover */
+
+  --border-color-richer: hsl(var(--theme-hue), 0%, 57%);	/* #888888		button:hover border */
+  --border-color: hsl(var(--theme-hue), 0%, 73%);					/* #bbbbbb		button border */
+	--border-color-softer: hsl(var(--theme-hue), 0%, 82%);	/* #d1d1d1		textarea,select,code,td,hr border	 */
+
+	--background-color: white;														/* transparent body background; textarea,select background */
+	--background-color-softer: hsl(var(--theme-hue), 0%, 95%);
+  --code-background: hsl(var(--theme-hue), 0%, 95%);			/* #f1f1f1 		code background*/
 
 	--button-primary-color: white;
 }
 
 /* when prefers-color-scheme supported, these can be in single media query with above */
-html[data-theme="dark"]	img.value-img {
-	filter: invert(0.8);
+[data-theme="light"]	img.value-img {
+	filter: none;
 }
-html[data-theme="dark"] img {
-	opacity: .90;
-	transition: opacity .5s ease-in-out;
+
+
+[data-theme="dark"] {
+	/* dark theme: light background, dark text, blue accent */
+  --theme-hue: 0;					/* black */
+  --accent-hue: 194;			/* blue */
+
+  --text-color-richer: hsl(var(--theme-hue), 0%, 95%);		/* #f2f2f2 */
+  --text-color-normal: hsl(var(--theme-hue), 0%, 80%);		/* #cccccc text color; button:hover:active color */
+  --text-color-softer: hsl(var(--theme-hue), 0%, 67%);		/* #ababab button color; button:hover border */
+
+  --accent-color: hsl(var(--accent-hue), 76%, 49%);				/* link; button-primary bg+border; textarea,select:focus border */
+  --accent-color-hover: hsl(var(--accent-hue), 86%, 57%);	/* link hover; button-primary:hover:active bg+border */
+  --accent-color-disabled: hsl(var(--accent-hue), 90%, 80%);
+
+  --button-color: var(--text-color-softer);								/* button color */
+  --button-color-hover: var(--text-color-normal);					/* button:hover:focus color */
+
+  --button-background: transparent;												/* button, input[type="submit" | "reset" | "button"] */
+  --button-background-hover: transparent;									/* button:hover, input[type="submit" | "reset" | "button"]:hover */
+
+  --border-color-richer: hsl(var(--theme-hue), 0%, 67%);	/* #ababab		button:hover border */
+  --border-color: hsl(var(--theme-hue), 0%, 27%);					/* button border */
+  --border-color-softer: hsl(var(--theme-hue), 0%, 20%);	/* textarea,select,code,td,hr border	 */
+
+  --background-color: hsl(var(--theme-hue), 0%, 12%);			/* body background; textarea,select background */
+  --background-color-softer: hsl(var(--theme-hue), 0%, 18%);
+  --code-background: hsl(var(--theme-hue), 0%, 5%);				/* code background*/
+
+  --button-primary-color: white;
+}
+
+/* when prefers-color-scheme supported, these can be in single media query with above */
+[data-theme="dark"]	img.value-img {
+	filter: invert(0.8);
 }
 
 /* add a transition to ease into new themes */
@@ -66,13 +107,13 @@ ul {
   color: #999;
   letter-spacing: normal; }
 .example {
-  position: relative; 
+  position: relative;
   margin-top: 4rem; }
 .example-header {
   font-weight: 600;
   margin-top: 1.5rem;
   margin-bottom: .5rem; }
-  
+
 @media (min-width: 600px) {
   .example-grid .column,
   .example-grid .columns {
@@ -175,12 +216,12 @@ i.fas, i.fab {
 /* ---- Buttons ---- */
 @media (min-width: 600px) {
 	#buttons .grid-container.quarters {
-		grid-template-columns: repeat(2, 1fr); }	
+		grid-template-columns: repeat(2, 1fr); }
 }
 @media (min-width: 900px) {
 	#buttons .grid-container.quarters {
 		grid-template-columns: repeat(4, 1fr);
-	}	
+	}
 }
 
 
@@ -265,7 +306,7 @@ pre.code-example {
     -webkit-filter: drop-shadow(0 0 6px rgba(0,0,0,.1));
        -moz-filter: drop-shadow(0 0 6px rgba(0,0,0,.1));
             filter: drop-shadow(0 0 6px rgba(0,0,0,.1)); }
-  .popover-item:first-child .popover-link:after, 
+  .popover-item:first-child .popover-link:after,
   .popover-item:first-child .popover-link:before {
     bottom: 100%;
     left: 50%;
